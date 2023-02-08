@@ -1,0 +1,9 @@
+#CODESYS project
+*.~u
+*.tgs
+*.opt
+
+#CODESYS library
+*.~u
+*.tgs
+*.opt
