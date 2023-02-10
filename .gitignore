@@ -7,3 +7,6 @@
 *.~u
 *.tgs
 *.opt
+*.compileinfo
+*.bootinfo_guids
+*.bootinfo
