@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Symbolconfiguration xmlns="http://www.3s-software.com/schemas/Symbolconfiguration.xsd">
+  <Header>
+    <Version>3.5.14.0</Version>
+    <SymbolConfigObject version="3.5.15.30" runtimeid="3.5.14.0" libversion="3.5.15.20" compiler="3.5.15.30" lmm="3.5.15.0" profile="DIADesigner-AX 1.3+" settings="SupportOPCUA, XmlIncludeComments, LayoutCalculator=OptimizedClientSideLayoutCalculator" />
+    <ProjectInfo name="AX8-CNC-PG" devicename="Device" appname="Application" />
+  </Header>
+  <TypeList>
+    <TypeSimple name="T_BOOL" size="1" swapsize="0" typeclass="Bool" iecname="BOOL" />
+    <TypeSimple name="T_INT" size="2" swapsize="2" typeclass="Int" iecname="INT" />
+    <TypeSimple name="T_LREAL" size="8" swapsize="8" typeclass="LReal" iecname="LREAL" />
+    <TypeUserDef name="T_AxisGroupMode" size="2" nativesize="2" swapsize="2" typeclass="Enum" iecname="AxisGroupMode" basetype="T_INT">
+      <UserDefElement type="T_AxisGroupMode" iecname="JOG" enumvalue="0" />
+      <UserDefElement type="T_AxisGroupMode" iecname="HOME" enumvalue="1" />
+      <UserDefElement type="T_AxisGroupMode" iecname="MPG" enumvalue="2" />
+      <UserDefElement type="T_AxisGroupMode" iecname="AUTO" enumvalue="3" />
+    </TypeUserDef>
+    <TypeUserDef name="T_Position" size="24" nativesize="24" typeclass="Userdef" pouclass="STRUCTURE" iecname="Position">
+      <UserDefElement iecname="relative" type="T_LREAL" byteoffset="0" vartype="VAR" />
+      <UserDefElement iecname="machine" type="T_LREAL" byteoffset="8" vartype="VAR" />
+      <UserDefElement iecname="toGo" type="T_LREAL" byteoffset="16" vartype="VAR" />
+    </TypeUserDef>
+    <TypeUserDef name="T_VisuButton" size="2" nativesize="2" typeclass="Userdef" pouclass="STRUCTURE" iecname="VisuButton">
+      <UserDefElement iecname="button" type="T_BOOL" byteoffset="0" vartype="VAR" />
+      <UserDefElement iecname="lamp" type="T_BOOL" byteoffset="1" vartype="VAR" />
+    </TypeUserDef>
+  </TypeList>
+  <NodeList>
+    <Node name="Application">
+      <Node name="Visu">
+        <Node name="Variables">
+          <Node name="autoLamp" type="T_BOOL" access="ReadWrite" />
+          <Node name="homeAllButton" type="T_VisuButton" access="ReadWrite" />
+          <Node name="homeLamp" type="T_BOOL" access="ReadWrite" />
+          <Node name="homeXButton" type="T_VisuButton" access="ReadWrite" />
+          <Node name="homeYButton" type="T_VisuButton" access="ReadWrite" />
+          <Node name="homeZButton" type="T_VisuButton" access="ReadWrite" />
+          <Node name="jogLamp" type="T_BOOL" access="ReadWrite" />
+          <Node name="jogXN" type="T_VisuButton" access="ReadWrite" />
+          <Node name="jogXP" type="T_VisuButton" access="ReadWrite" />
+          <Node name="jogYN" type="T_VisuButton" access="ReadWrite" />
+          <Node name="jogYP" type="T_VisuButton" access="ReadWrite" />
+          <Node name="jogZN" type="T_VisuButton" access="ReadWrite" />
+          <Node name="jogZP" type="T_VisuButton" access="ReadWrite" />
+          <Node name="modeRequest" type="T_AxisGroupMode" access="ReadWrite" />
+          <Node name="mpgLamp" type="T_BOOL" access="ReadWrite" />
+          <Node name="powerButton" type="T_VisuButton" access="ReadWrite" />
+          <Node name="subscreenRequest" type="T_INT" access="ReadWrite" />
+          <Node name="xPositions" type="T_Position" access="ReadWrite" />
+          <Node name="yPositions" type="T_Position" access="ReadWrite" />
+          <Node name="zeroAllButton" type="T_VisuButton" access="ReadWrite" />
+          <Node name="zPositions" type="T_Position" access="ReadWrite" />
+        </Node>
+      </Node>
+    </Node>
+  </NodeList>
+</Symbolconfiguration>
