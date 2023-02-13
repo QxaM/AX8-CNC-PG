@@ -10,3 +10,6 @@
 *.compileinfo
 *.bootinfo_guids
 *.bootinfo
+
+#DOPSoft
+*.bak
