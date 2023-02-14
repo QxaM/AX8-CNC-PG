@@ -9,12 +9,14 @@
     <TypeSimple name="T_BOOL" size="1" swapsize="0" typeclass="Bool" iecname="BOOL" />
     <TypeSimple name="T_INT" size="2" swapsize="2" typeclass="Int" iecname="INT" />
     <TypeSimple name="T_LREAL" size="8" swapsize="8" typeclass="LReal" iecname="LREAL" />
+    <TypeSimple name="T_STRING_255_" size="256" swapsize="0" typeclass="String" iecname="STRING(255)" />
     <TypeUserDef name="T_AxisGroupMode" size="2" nativesize="2" swapsize="2" typeclass="Enum" iecname="AxisGroupMode" basetype="T_INT">
       <UserDefElement type="T_AxisGroupMode" iecname="JOG" enumvalue="0" />
       <UserDefElement type="T_AxisGroupMode" iecname="HOME" enumvalue="1" />
       <UserDefElement type="T_AxisGroupMode" iecname="MPG" enumvalue="2" />
       <UserDefElement type="T_AxisGroupMode" iecname="AUTO" enumvalue="3" />
     </TypeUserDef>
+    <TypeSimple name="T_MaxString" size="256" swapsize="0" typeclass="String" iecname="MaxString" aliasedtype="T_STRING_255_" aliasediecname="STRING(255)" />
     <TypeUserDef name="T_Position" size="24" nativesize="24" typeclass="Userdef" pouclass="STRUCTURE" iecname="Position">
       <UserDefElement iecname="relative" type="T_LREAL" byteoffset="0" vartype="VAR" />
       <UserDefElement iecname="machine" type="T_LREAL" byteoffset="8" vartype="VAR" />
@@ -30,6 +32,8 @@
       <Node name="Visu">
         <Node name="Variables">
           <Node name="autoLamp" type="T_BOOL" access="ReadWrite" />
+          <Node name="errorLamp" type="T_BOOL" access="ReadWrite" />
+          <Node name="errorMessage" type="T_MaxString" access="ReadWrite" />
           <Node name="homeAllButton" type="T_VisuButton" access="ReadWrite" />
           <Node name="homeLamp" type="T_BOOL" access="ReadWrite" />
           <Node name="homeXButton" type="T_VisuButton" access="ReadWrite" />
@@ -42,6 +46,7 @@
           <Node name="jogYP" type="T_VisuButton" access="ReadWrite" />
           <Node name="jogZN" type="T_VisuButton" access="ReadWrite" />
           <Node name="jogZP" type="T_VisuButton" access="ReadWrite" />
+          <Node name="lifeLamp" type="T_BOOL" access="ReadWrite" />
           <Node name="modeRequest" type="T_AxisGroupMode" access="ReadWrite" />
           <Node name="mpgLamp" type="T_BOOL" access="ReadWrite" />
           <Node name="powerButton" type="T_VisuButton" access="ReadWrite" />
