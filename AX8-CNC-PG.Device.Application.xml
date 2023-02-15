@@ -51,9 +51,12 @@
           <Node name="mpgLamp" type="T_BOOL" access="ReadWrite" />
           <Node name="powerButton" type="T_VisuButton" access="ReadWrite" />
           <Node name="subscreenRequest" type="T_INT" access="ReadWrite" />
+          <Node name="xLoad" type="T_LREAL" access="ReadWrite" />
           <Node name="xPositions" type="T_Position" access="ReadWrite" />
+          <Node name="yLoad" type="T_LREAL" access="ReadWrite" />
           <Node name="yPositions" type="T_Position" access="ReadWrite" />
           <Node name="zeroAllButton" type="T_VisuButton" access="ReadWrite" />
+          <Node name="zLoad" type="T_LREAL" access="ReadWrite" />
           <Node name="zPositions" type="T_Position" access="ReadWrite" />
         </Node>
       </Node>
