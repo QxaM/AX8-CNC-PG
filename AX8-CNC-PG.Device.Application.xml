@@ -49,6 +49,7 @@
           <Node name="lifeLamp" type="T_BOOL" access="ReadWrite" />
           <Node name="modeRequest" type="T_AxisGroupMode" access="ReadWrite" />
           <Node name="mpgLamp" type="T_BOOL" access="ReadWrite" />
+          <Node name="ncFileName" type="T_MaxString" access="ReadWrite" />
           <Node name="powerButton" type="T_VisuButton" access="ReadWrite" />
           <Node name="subscreenRequest" type="T_INT" access="ReadWrite" />
           <Node name="xLoad" type="T_LREAL" access="ReadWrite" />
