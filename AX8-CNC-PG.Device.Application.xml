@@ -30,11 +30,17 @@
       <UserDefElement iecname="button" type="T_BOOL" byteoffset="0" vartype="VAR" />
       <UserDefElement iecname="lamp" type="T_BOOL" byteoffset="1" vartype="VAR" />
     </TypeUserDef>
+    <TypeUserDef name="T_VisuButtonMenu" size="3" nativesize="3" typeclass="Userdef" pouclass="STRUCTURE" iecname="VisuButtonMenu" basetype="T_VisuButton">
+      <UserDefElement iecname="button" type="T_BOOL" byteoffset="0" vartype="VAR" inherited_from="T_VisuButton" />
+      <UserDefElement iecname="lamp" type="T_BOOL" byteoffset="1" vartype="VAR" inherited_from="T_VisuButton" />
+      <UserDefElement iecname="readStatus" type="T_BOOL" byteoffset="2" vartype="VAR" />
+    </TypeUserDef>
   </TypeList>
   <NodeList>
     <Node name="Application">
       <Node name="Visu">
         <Node name="Variables">
+          <Node name="alwaysFalse" type="T_BOOL" access="ReadWrite" />
           <Node name="alwaysTrue" type="T_BOOL" access="ReadWrite" />
           <Node name="autoLamp" type="T_BOOL" access="ReadWrite" />
           <Node name="currentFeed" type="T_REAL" access="ReadWrite" />
@@ -61,9 +67,12 @@
           <Node name="pauseButton" type="T_VisuButton" access="ReadWrite" />
           <Node name="powerButton" type="T_VisuButton" access="ReadWrite" />
           <Node name="resetButton" type="T_VisuButton" access="ReadWrite" />
-          <Node name="spindleRunButton" type="T_VisuButton" access="ReadWrite" />
+          <Node name="spindleActualSpeed" type="T_UINT" access="ReadWrite" />
+          <Node name="spindleLoad" type="T_INT" access="ReadWrite" />
+          <Node name="spindleRunCCWButton" type="T_VisuButtonMenu" access="ReadWrite" />
+          <Node name="spindleRunCWButton" type="T_VisuButtonMenu" access="ReadWrite" />
           <Node name="spindleSpeed" type="T_UINT" access="ReadWrite" />
-          <Node name="spindleStopButton" type="T_VisuButton" access="ReadWrite" />
+          <Node name="spindleStopButton" type="T_VisuButtonMenu" access="ReadWrite" />
           <Node name="startButton" type="T_VisuButton" access="ReadWrite" />
           <Node name="stopButton" type="T_VisuButton" access="ReadWrite" />
           <Node name="subscreenRequest" type="T_INT" access="ReadWrite" />
