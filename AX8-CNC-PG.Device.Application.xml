@@ -13,6 +13,7 @@
     <TypeSimple name="T_REAL" size="4" swapsize="4" typeclass="Real" iecname="REAL" />
     <TypeSimple name="T_STRING" size="81" swapsize="0" typeclass="String" iecname="STRING" />
     <TypeSimple name="T_STRING_255_" size="256" swapsize="0" typeclass="String" iecname="STRING(255)" />
+    <TypeSimple name="T_UINT" size="2" swapsize="2" typeclass="UInt" iecname="UINT" />
     <TypeUserDef name="T_AxisGroupMode" size="2" nativesize="2" swapsize="2" typeclass="Enum" iecname="AxisGroupMode" basetype="T_INT">
       <UserDefElement type="T_AxisGroupMode" iecname="JOG" enumvalue="0" />
       <UserDefElement type="T_AxisGroupMode" iecname="HOME" enumvalue="1" />
@@ -46,6 +47,7 @@
           <Node name="homeYButton" type="T_VisuButton" access="ReadWrite" />
           <Node name="homeZButton" type="T_VisuButton" access="ReadWrite" />
           <Node name="jogLamp" type="T_BOOL" access="ReadWrite" />
+          <Node name="jogSpeed" type="T_LREAL" access="ReadWrite" />
           <Node name="jogXN" type="T_VisuButton" access="ReadWrite" />
           <Node name="jogXP" type="T_VisuButton" access="ReadWrite" />
           <Node name="jogYN" type="T_VisuButton" access="ReadWrite" />
@@ -58,9 +60,14 @@
           <Node name="ncFileName" type="T_STRING" access="ReadWrite" />
           <Node name="pauseButton" type="T_VisuButton" access="ReadWrite" />
           <Node name="powerButton" type="T_VisuButton" access="ReadWrite" />
+          <Node name="resetButton" type="T_VisuButton" access="ReadWrite" />
+          <Node name="spindleRunButton" type="T_VisuButton" access="ReadWrite" />
+          <Node name="spindleSpeed" type="T_UINT" access="ReadWrite" />
+          <Node name="spindleStopButton" type="T_VisuButton" access="ReadWrite" />
           <Node name="startButton" type="T_VisuButton" access="ReadWrite" />
           <Node name="stopButton" type="T_VisuButton" access="ReadWrite" />
           <Node name="subscreenRequest" type="T_INT" access="ReadWrite" />
+          <Node name="subscreenRequestSpindleOverrides" type="T_INT" access="ReadWrite" />
           <Node name="xLoad" type="T_INT" access="ReadWrite" />
           <Node name="xPositions" type="T_Position" access="ReadWrite" />
           <Node name="yLoad" type="T_INT" access="ReadWrite" />
