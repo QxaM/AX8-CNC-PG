@@ -20,6 +20,14 @@
       <UserDefElement type="T_AxisGroupMode" iecname="MPG" enumvalue="2" />
       <UserDefElement type="T_AxisGroupMode" iecname="AUTO" enumvalue="3" />
     </TypeUserDef>
+    <TypeUserDef name="T_Fixture" size="27" nativesize="32" typeclass="Userdef" pouclass="STRUCTURE" iecname="Fixture">
+      <UserDefElement iecname="xOffset" type="T_LREAL" byteoffset="0" vartype="VAR" />
+      <UserDefElement iecname="yOffset" type="T_LREAL" byteoffset="8" vartype="VAR" />
+      <UserDefElement iecname="zOffset" type="T_LREAL" byteoffset="16" vartype="VAR" />
+      <UserDefElement iecname="xSelection" type="T_BOOL" byteoffset="24" vartype="VAR" />
+      <UserDefElement iecname="ySelection" type="T_BOOL" byteoffset="25" vartype="VAR" />
+      <UserDefElement iecname="zSelection" type="T_BOOL" byteoffset="26" vartype="VAR" />
+    </TypeUserDef>
     <TypeSimple name="T_MaxString" size="256" swapsize="0" typeclass="String" iecname="MaxString" aliasedtype="T_STRING_255_" aliasediecname="STRING(255)" />
     <TypeUserDef name="T_Position" size="24" nativesize="24" typeclass="Userdef" pouclass="STRUCTURE" iecname="Position">
       <UserDefElement iecname="relative" type="T_LREAL" byteoffset="0" vartype="VAR" />
@@ -30,14 +38,23 @@
       <UserDefElement iecname="button" type="T_BOOL" byteoffset="0" vartype="VAR" />
       <UserDefElement iecname="lamp" type="T_BOOL" byteoffset="1" vartype="VAR" />
     </TypeUserDef>
+    <TypeArray name="T_ARRAY__0__5__OF_Fixture" size="192" nativesize="192" typeclass="Array" iecname="ARRAY [0..5] OF Fixture" basetype="T_Fixture">
+      <ArrayDim minrange="0" maxrange="5" />
+    </TypeArray>
     <TypeUserDef name="T_VisuButtonMenu" size="3" nativesize="3" typeclass="Userdef" pouclass="STRUCTURE" iecname="VisuButtonMenu" basetype="T_VisuButton">
       <UserDefElement iecname="button" type="T_BOOL" byteoffset="0" vartype="VAR" inherited_from="T_VisuButton" />
       <UserDefElement iecname="lamp" type="T_BOOL" byteoffset="1" vartype="VAR" inherited_from="T_VisuButton" />
       <UserDefElement iecname="readStatus" type="T_BOOL" byteoffset="2" vartype="VAR" />
     </TypeUserDef>
+    <TypeArray name="T_Fixtures_MachineFixtures" size="192" nativesize="192" typeclass="Array" iecname="Fixtures.MachineFixtures" aliasedtype="T_ARRAY__0__5__OF_Fixture" aliasediecname="ARRAY [0..5] OF Fixture" basetype="T_Fixture">
+      <ArrayDim minrange="0" maxrange="5" />
+    </TypeArray>
   </TypeList>
   <NodeList>
     <Node name="Application">
+      <Node name="PersistentVars">
+        <Node name="machineFixtures" type="T_Fixtures_MachineFixtures" access="ReadWrite" />
+      </Node>
       <Node name="Visu">
         <Node name="Variables">
           <Node name="alwaysFalse" type="T_BOOL" access="ReadWrite" />
