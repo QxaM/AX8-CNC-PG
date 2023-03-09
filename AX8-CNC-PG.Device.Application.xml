@@ -64,6 +64,7 @@
           <Node name="currentLine" type="T_DINT" access="ReadWrite" />
           <Node name="errorLamp" type="T_BOOL" access="ReadWrite" />
           <Node name="errorMessage" type="T_MaxString" access="ReadWrite" />
+          <Node name="fixtureElementSelection" type="T_INT" access="ReadWrite" />
           <Node name="homeAllButton" type="T_VisuButton" access="ReadWrite" />
           <Node name="homeLamp" type="T_BOOL" access="ReadWrite" />
           <Node name="homeXButton" type="T_VisuButton" access="ReadWrite" />
