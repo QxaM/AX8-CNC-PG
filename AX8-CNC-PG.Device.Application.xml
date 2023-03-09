@@ -46,8 +46,9 @@
       <UserDefElement iecname="lamp" type="T_BOOL" byteoffset="1" vartype="VAR" inherited_from="T_VisuButton" />
       <UserDefElement iecname="readStatus" type="T_BOOL" byteoffset="2" vartype="VAR" />
     </TypeUserDef>
-    <TypeUserDef name="T_MachineFixtures" size="192" nativesize="192" typeclass="Userdef" pouclass="STRUCTURE" iecname="MachineFixtures">
+    <TypeUserDef name="T_MachineFixtures" size="194" nativesize="200" typeclass="Userdef" pouclass="STRUCTURE" iecname="MachineFixtures">
       <UserDefElement iecname="fixtures" type="T_ARRAY__0__5__OF_Fixture" byteoffset="0" vartype="VAR" />
+      <UserDefElement iecname="activeFixture" type="T_INT" byteoffset="192" vartype="VAR" />
     </TypeUserDef>
   </TypeList>
   <NodeList>
