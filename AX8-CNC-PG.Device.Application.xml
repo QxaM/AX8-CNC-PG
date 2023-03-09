@@ -46,14 +46,14 @@
       <UserDefElement iecname="lamp" type="T_BOOL" byteoffset="1" vartype="VAR" inherited_from="T_VisuButton" />
       <UserDefElement iecname="readStatus" type="T_BOOL" byteoffset="2" vartype="VAR" />
     </TypeUserDef>
-    <TypeArray name="T_Fixtures_MachineFixtures" size="192" nativesize="192" typeclass="Array" iecname="Fixtures.MachineFixtures" aliasedtype="T_ARRAY__0__5__OF_Fixture" aliasediecname="ARRAY [0..5] OF Fixture" basetype="T_Fixture">
-      <ArrayDim minrange="0" maxrange="5" />
-    </TypeArray>
+    <TypeUserDef name="T_MachineFixtures" size="192" nativesize="192" typeclass="Userdef" pouclass="STRUCTURE" iecname="MachineFixtures">
+      <UserDefElement iecname="fixtures" type="T_ARRAY__0__5__OF_Fixture" byteoffset="0" vartype="VAR" />
+    </TypeUserDef>
   </TypeList>
   <NodeList>
     <Node name="Application">
       <Node name="PersistentVars">
-        <Node name="machineFixtures" type="T_Fixtures_MachineFixtures" access="ReadWrite" />
+        <Node name="machineFixtures" type="T_MachineFixtures" access="ReadWrite" />
       </Node>
       <Node name="Visu">
         <Node name="Variables">
@@ -65,6 +65,8 @@
           <Node name="errorLamp" type="T_BOOL" access="ReadWrite" />
           <Node name="errorMessage" type="T_MaxString" access="ReadWrite" />
           <Node name="fixtureElementSelection" type="T_INT" access="ReadWrite" />
+          <Node name="fixtureSetAllElements" type="T_VisuButton" access="ReadWrite" />
+          <Node name="fixtureSetElement" type="T_VisuButton" access="ReadWrite" />
           <Node name="homeAllButton" type="T_VisuButton" access="ReadWrite" />
           <Node name="homeLamp" type="T_BOOL" access="ReadWrite" />
           <Node name="homeXButton" type="T_VisuButton" access="ReadWrite" />
