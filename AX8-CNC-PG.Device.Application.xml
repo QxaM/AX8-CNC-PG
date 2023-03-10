@@ -20,6 +20,12 @@
       <UserDefElement type="T_AxisGroupMode" iecname="MPG" enumvalue="2" />
       <UserDefElement type="T_AxisGroupMode" iecname="AUTO" enumvalue="3" />
     </TypeUserDef>
+    <TypeUserDef name="T_FilePreprocessorSettings" size="16" nativesize="16" typeclass="Userdef" pouclass="STRUCTURE" iecname="FilePreprocessorSettings">
+      <UserDefElement iecname="defaultF" type="T_REAL" byteoffset="0" vartype="VAR" />
+      <UserDefElement iecname="defaultG0F" type="T_REAL" byteoffset="4" vartype="VAR" />
+      <UserDefElement iecname="defaultFAcc" type="T_REAL" byteoffset="8" vartype="VAR" />
+      <UserDefElement iecname="defaultG0Acc" type="T_REAL" byteoffset="12" vartype="VAR" />
+    </TypeUserDef>
     <TypeUserDef name="T_Fixture" size="27" nativesize="32" typeclass="Userdef" pouclass="STRUCTURE" iecname="Fixture">
       <UserDefElement iecname="xOffset" type="T_LREAL" byteoffset="0" vartype="VAR" />
       <UserDefElement iecname="yOffset" type="T_LREAL" byteoffset="8" vartype="VAR" />
@@ -54,6 +60,7 @@
   <NodeList>
     <Node name="Application">
       <Node name="PersistentVars">
+        <Node name="filePreprocessorSettings" type="T_FilePreprocessorSettings" access="ReadWrite" />
         <Node name="machineFixtures" type="T_MachineFixtures" access="ReadWrite" />
       </Node>
       <Node name="Visu">
