@@ -14,6 +14,15 @@
     <TypeSimple name="T_STRING" size="81" swapsize="0" typeclass="String" iecname="STRING" />
     <TypeSimple name="T_STRING_255_" size="256" swapsize="0" typeclass="String" iecname="STRING(255)" />
     <TypeSimple name="T_UINT" size="2" swapsize="2" typeclass="UInt" iecname="UINT" />
+    <TypeUserDef name="T_AGMGeneralSettings" size="56" nativesize="56" typeclass="Userdef" pouclass="STRUCTURE" iecname="AGMGeneralSettings">
+      <UserDefElement iecname="jogXYZDistance" type="T_LREAL" byteoffset="0" vartype="VAR" />
+      <UserDefElement iecname="jogABCDistance" type="T_LREAL" byteoffset="8" vartype="VAR" />
+      <UserDefElement iecname="jogDefaultVelocity" type="T_LREAL" byteoffset="16" vartype="VAR" />
+      <UserDefElement iecname="jogAcceleration" type="T_LREAL" byteoffset="24" vartype="VAR" />
+      <UserDefElement iecname="jogJerk" type="T_LREAL" byteoffset="32" vartype="VAR" />
+      <UserDefElement iecname="zeroReturnSpeed" type="T_LREAL" byteoffset="40" vartype="VAR" />
+      <UserDefElement iecname="zeroReturnAccelartion" type="T_LREAL" byteoffset="48" vartype="VAR" />
+    </TypeUserDef>
     <TypeUserDef name="T_AxisGroupMode" size="2" nativesize="2" swapsize="2" typeclass="Enum" iecname="AxisGroupMode" basetype="T_INT">
       <UserDefElement type="T_AxisGroupMode" iecname="JOG" enumvalue="0" />
       <UserDefElement type="T_AxisGroupMode" iecname="HOME" enumvalue="1" />
@@ -60,6 +69,7 @@
   <NodeList>
     <Node name="Application">
       <Node name="PersistentVars">
+        <Node name="agmGeneralSettings" type="T_AGMGeneralSettings" access="ReadWrite" />
         <Node name="filePreprocessorSettings" type="T_FilePreprocessorSettings" access="ReadWrite" />
         <Node name="machineFixtures" type="T_MachineFixtures" access="ReadWrite" />
       </Node>
