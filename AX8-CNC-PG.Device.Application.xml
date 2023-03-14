@@ -120,6 +120,7 @@
           <Node name="disableMPG" type="T_VisuButton" access="ReadWrite" />
           <Node name="errorLamp" type="T_BOOL" access="ReadWrite" />
           <Node name="errorMessage" type="T_MaxString" access="ReadWrite" />
+          <Node name="feedOverride" type="T_INT" access="ReadWrite" />
           <Node name="fixtureAddValue" type="T_VisuButton" access="ReadWrite" />
           <Node name="fixtureElementSelection" type="T_INT" access="ReadWrite" />
           <Node name="fixtureSetAllElements" type="T_VisuButton" access="ReadWrite" />
@@ -133,7 +134,7 @@
           <Node name="homeYButton" type="T_VisuButton" access="ReadWrite" />
           <Node name="homeZButton" type="T_VisuButton" access="ReadWrite" />
           <Node name="jogLamp" type="T_BOOL" access="ReadWrite" />
-          <Node name="jogSpeed" type="T_LREAL" access="ReadWrite" />
+          <Node name="jogSpeed" type="T_INT" access="ReadWrite" />
           <Node name="jogXN" type="T_VisuButton" access="ReadWrite" />
           <Node name="jogXP" type="T_VisuButton" access="ReadWrite" />
           <Node name="jogYN" type="T_VisuButton" access="ReadWrite" />
