@@ -117,6 +117,7 @@
           <Node name="autoLamp" type="T_BOOL" access="ReadWrite" />
           <Node name="currentFeed" type="T_REAL" access="ReadWrite" />
           <Node name="currentLine" type="T_DINT" access="ReadWrite" />
+          <Node name="disableMPG" type="T_VisuButton" access="ReadWrite" />
           <Node name="errorLamp" type="T_BOOL" access="ReadWrite" />
           <Node name="errorMessage" type="T_MaxString" access="ReadWrite" />
           <Node name="fixtureAddValue" type="T_VisuButton" access="ReadWrite" />
@@ -141,7 +142,13 @@
           <Node name="jogZP" type="T_VisuButton" access="ReadWrite" />
           <Node name="lifeLamp" type="T_BOOL" access="ReadWrite" />
           <Node name="modeRequest" type="T_AxisGroupMode" access="ReadWrite" />
+          <Node name="mpg100x" type="T_VisuButton" access="ReadWrite" />
+          <Node name="mpg10x" type="T_VisuButton" access="ReadWrite" />
+          <Node name="mpg1x" type="T_VisuButton" access="ReadWrite" />
           <Node name="mpgLamp" type="T_BOOL" access="ReadWrite" />
+          <Node name="mpgX" type="T_VisuButton" access="ReadWrite" />
+          <Node name="mpgY" type="T_VisuButton" access="ReadWrite" />
+          <Node name="mpgZ" type="T_VisuButton" access="ReadWrite" />
           <Node name="ncFileName" type="T_STRING" access="ReadWrite" />
           <Node name="pauseButton" type="T_VisuButton" access="ReadWrite" />
           <Node name="powerButton" type="T_VisuButton" access="ReadWrite" />
