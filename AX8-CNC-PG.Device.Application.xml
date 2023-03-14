@@ -13,12 +13,58 @@
     <TypeSimple name="T_REAL" size="4" swapsize="4" typeclass="Real" iecname="REAL" />
     <TypeSimple name="T_STRING" size="81" swapsize="0" typeclass="String" iecname="STRING" />
     <TypeSimple name="T_STRING_255_" size="256" swapsize="0" typeclass="String" iecname="STRING(255)" />
+    <TypeSimple name="T_UDINT" size="4" swapsize="4" typeclass="UDInt" iecname="UDINT" />
     <TypeSimple name="T_UINT" size="2" swapsize="2" typeclass="UInt" iecname="UINT" />
+    <TypeSimple name="T_USINT" size="1" swapsize="1" typeclass="USInt" iecname="USINT" />
+    <TypeUserDef name="T_AGMGeneralSettings" size="56" nativesize="56" typeclass="Userdef" pouclass="STRUCTURE" iecname="AGMGeneralSettings">
+      <UserDefElement iecname="jogXYZDistance" type="T_LREAL" byteoffset="0" vartype="VAR" />
+      <UserDefElement iecname="jogABCDistance" type="T_LREAL" byteoffset="8" vartype="VAR" />
+      <UserDefElement iecname="jogDefaultVelocity" type="T_LREAL" byteoffset="16" vartype="VAR" />
+      <UserDefElement iecname="jogAcceleration" type="T_LREAL" byteoffset="24" vartype="VAR" />
+      <UserDefElement iecname="jogJerk" type="T_LREAL" byteoffset="32" vartype="VAR" />
+      <UserDefElement iecname="zeroReturnSpeed" type="T_LREAL" byteoffset="40" vartype="VAR" />
+      <UserDefElement iecname="zeroReturnAccelartion" type="T_LREAL" byteoffset="48" vartype="VAR" />
+    </TypeUserDef>
+    <TypeArray name="T_ARRAY__0__2__OF_INT" size="6" nativesize="6" typeclass="Array" iecname="ARRAY [0..2] OF INT" basetype="T_INT">
+      <ArrayDim minrange="0" maxrange="2" />
+    </TypeArray>
     <TypeUserDef name="T_AxisGroupMode" size="2" nativesize="2" swapsize="2" typeclass="Enum" iecname="AxisGroupMode" basetype="T_INT">
       <UserDefElement type="T_AxisGroupMode" iecname="JOG" enumvalue="0" />
       <UserDefElement type="T_AxisGroupMode" iecname="HOME" enumvalue="1" />
       <UserDefElement type="T_AxisGroupMode" iecname="MPG" enumvalue="2" />
       <UserDefElement type="T_AxisGroupMode" iecname="AUTO" enumvalue="3" />
+    </TypeUserDef>
+    <TypeUserDef name="T_AxisSettings" size="96" nativesize="96" typeclass="Userdef" pouclass="STRUCTURE" iecname="AxisSettings">
+      <UserDefElement iecname="homingMethod" type="T_USINT" byteoffset="0" vartype="VAR" />
+      <UserDefElement iecname="homingPosition" type="T_LREAL" byteoffset="8" vartype="VAR" />
+      <UserDefElement iecname="firstHomingSpeed" type="T_UDINT" byteoffset="16" vartype="VAR" />
+      <UserDefElement iecname="secondHomingSpeed" type="T_UDINT" byteoffset="20" vartype="VAR" />
+      <UserDefElement iecname="maxSpeed" type="T_LREAL" byteoffset="24" vartype="VAR" />
+      <UserDefElement iecname="maxAcceleration" type="T_LREAL" byteoffset="32" vartype="VAR" />
+      <UserDefElement iecname="maxDeceleration" type="T_LREAL" byteoffset="40" vartype="VAR" />
+      <UserDefElement iecname="maxJerk" type="T_LREAL" byteoffset="48" vartype="VAR" />
+      <UserDefElement iecname="negativeSoftwareLimit" type="T_LREAL" byteoffset="56" vartype="VAR" />
+      <UserDefElement iecname="positiveSoftwareLimit" type="T_LREAL" byteoffset="64" vartype="VAR" />
+      <UserDefElement iecname="servoIncrements" type="T_DINT" byteoffset="72" vartype="VAR" />
+      <UserDefElement iecname="motorTurnsPerIncrements" type="T_DINT" byteoffset="76" vartype="VAR" />
+      <UserDefElement iecname="motorGearInputTurns" type="T_DINT" byteoffset="80" vartype="VAR" />
+      <UserDefElement iecname="gearOutputTurns" type="T_DINT" byteoffset="84" vartype="VAR" />
+      <UserDefElement iecname="gearTurnsPerUnitsInApplication" type="T_DINT" byteoffset="88" vartype="VAR" />
+      <UserDefElement iecname="unitsInApplication" type="T_DINT" byteoffset="92" vartype="VAR" />
+    </TypeUserDef>
+    <TypeUserDef name="T_FilePreprocessorSettings" size="16" nativesize="16" typeclass="Userdef" pouclass="STRUCTURE" iecname="FilePreprocessorSettings">
+      <UserDefElement iecname="defaultF" type="T_REAL" byteoffset="0" vartype="VAR" />
+      <UserDefElement iecname="defaultG0F" type="T_REAL" byteoffset="4" vartype="VAR" />
+      <UserDefElement iecname="defaultFAcc" type="T_REAL" byteoffset="8" vartype="VAR" />
+      <UserDefElement iecname="defaultG0Acc" type="T_REAL" byteoffset="12" vartype="VAR" />
+    </TypeUserDef>
+    <TypeUserDef name="T_Fixture" size="27" nativesize="32" typeclass="Userdef" pouclass="STRUCTURE" iecname="Fixture">
+      <UserDefElement iecname="xOffset" type="T_LREAL" byteoffset="0" vartype="VAR" />
+      <UserDefElement iecname="yOffset" type="T_LREAL" byteoffset="8" vartype="VAR" />
+      <UserDefElement iecname="zOffset" type="T_LREAL" byteoffset="16" vartype="VAR" />
+      <UserDefElement iecname="xSelection" type="T_BOOL" byteoffset="24" vartype="VAR" />
+      <UserDefElement iecname="ySelection" type="T_BOOL" byteoffset="25" vartype="VAR" />
+      <UserDefElement iecname="zSelection" type="T_BOOL" byteoffset="26" vartype="VAR" />
     </TypeUserDef>
     <TypeSimple name="T_MaxString" size="256" swapsize="0" typeclass="String" iecname="MaxString" aliasedtype="T_STRING_255_" aliasediecname="STRING(255)" />
     <TypeUserDef name="T_Position" size="24" nativesize="24" typeclass="Userdef" pouclass="STRUCTURE" iecname="Position">
@@ -26,21 +72,60 @@
       <UserDefElement iecname="machine" type="T_LREAL" byteoffset="8" vartype="VAR" />
       <UserDefElement iecname="toGo" type="T_LREAL" byteoffset="16" vartype="VAR" />
     </TypeUserDef>
+    <TypeUserDef name="T_SpindleSettings" size="9" nativesize="12" typeclass="Userdef" pouclass="STRUCTURE" iecname="SpindleSettings">
+      <UserDefElement iecname="accRamp" type="T_REAL" byteoffset="0" vartype="VAR" />
+      <UserDefElement iecname="dccRamp" type="T_REAL" byteoffset="4" vartype="VAR" />
+      <UserDefElement iecname="changeDirection" type="T_BOOL" byteoffset="8" vartype="VAR" />
+    </TypeUserDef>
     <TypeUserDef name="T_VisuButton" size="2" nativesize="2" typeclass="Userdef" pouclass="STRUCTURE" iecname="VisuButton">
       <UserDefElement iecname="button" type="T_BOOL" byteoffset="0" vartype="VAR" />
       <UserDefElement iecname="lamp" type="T_BOOL" byteoffset="1" vartype="VAR" />
     </TypeUserDef>
+    <TypeArray name="T_ARRAY__0__2__OF_AxisSettings" size="288" nativesize="288" typeclass="Array" iecname="ARRAY [0..2] OF AxisSettings" basetype="T_AxisSettings">
+      <ArrayDim minrange="0" maxrange="2" />
+    </TypeArray>
+    <TypeArray name="T_ARRAY__0__5__OF_Fixture" size="192" nativesize="192" typeclass="Array" iecname="ARRAY [0..5] OF Fixture" basetype="T_Fixture">
+      <ArrayDim minrange="0" maxrange="5" />
+    </TypeArray>
+    <TypeUserDef name="T_VisuButtonMenu" size="3" nativesize="3" typeclass="Userdef" pouclass="STRUCTURE" iecname="VisuButtonMenu" basetype="T_VisuButton">
+      <UserDefElement iecname="button" type="T_BOOL" byteoffset="0" vartype="VAR" inherited_from="T_VisuButton" />
+      <UserDefElement iecname="lamp" type="T_BOOL" byteoffset="1" vartype="VAR" inherited_from="T_VisuButton" />
+      <UserDefElement iecname="readStatus" type="T_BOOL" byteoffset="2" vartype="VAR" />
+    </TypeUserDef>
+    <TypeUserDef name="T_AGMAxesSettings" size="294" nativesize="296" typeclass="Userdef" pouclass="STRUCTURE" iecname="AGMAxesSettings">
+      <UserDefElement iecname="axesSettings" type="T_ARRAY__0__2__OF_AxisSettings" byteoffset="0" vartype="VAR" />
+      <UserDefElement iecname="homingOrder" type="T_ARRAY__0__2__OF_INT" byteoffset="288" vartype="VAR" />
+    </TypeUserDef>
+    <TypeUserDef name="T_MachineFixtures" size="194" nativesize="200" typeclass="Userdef" pouclass="STRUCTURE" iecname="MachineFixtures">
+      <UserDefElement iecname="fixtures" type="T_ARRAY__0__5__OF_Fixture" byteoffset="0" vartype="VAR" />
+      <UserDefElement iecname="activeFixture" type="T_INT" byteoffset="192" vartype="VAR" />
+    </TypeUserDef>
   </TypeList>
   <NodeList>
     <Node name="Application">
+      <Node name="PersistentVars">
+        <Node name="AGMAxesSettings" type="T_AGMAxesSettings" access="ReadWrite" />
+        <Node name="agmGeneralSettings" type="T_AGMGeneralSettings" access="ReadWrite" />
+        <Node name="filePreprocessorSettings" type="T_FilePreprocessorSettings" access="ReadWrite" />
+        <Node name="machineFixtures" type="T_MachineFixtures" access="ReadWrite" />
+        <Node name="spindleSettings" type="T_SpindleSettings" access="ReadWrite" />
+      </Node>
       <Node name="Visu">
         <Node name="Variables">
+          <Node name="alwaysFalse" type="T_BOOL" access="ReadWrite" />
           <Node name="alwaysTrue" type="T_BOOL" access="ReadWrite" />
           <Node name="autoLamp" type="T_BOOL" access="ReadWrite" />
           <Node name="currentFeed" type="T_REAL" access="ReadWrite" />
           <Node name="currentLine" type="T_DINT" access="ReadWrite" />
           <Node name="errorLamp" type="T_BOOL" access="ReadWrite" />
           <Node name="errorMessage" type="T_MaxString" access="ReadWrite" />
+          <Node name="fixtureAddValue" type="T_VisuButton" access="ReadWrite" />
+          <Node name="fixtureElementSelection" type="T_INT" access="ReadWrite" />
+          <Node name="fixtureSetAllElements" type="T_VisuButton" access="ReadWrite" />
+          <Node name="fixtureSetElement" type="T_VisuButton" access="ReadWrite" />
+          <Node name="fixtureSetHalf" type="T_VisuButton" access="ReadWrite" />
+          <Node name="fixtureSetValue" type="T_VisuButton" access="ReadWrite" />
+          <Node name="fixtureValue" type="T_LREAL" access="ReadWrite" />
           <Node name="homeAllButton" type="T_VisuButton" access="ReadWrite" />
           <Node name="homeLamp" type="T_BOOL" access="ReadWrite" />
           <Node name="homeXButton" type="T_VisuButton" access="ReadWrite" />
@@ -61,11 +146,15 @@
           <Node name="pauseButton" type="T_VisuButton" access="ReadWrite" />
           <Node name="powerButton" type="T_VisuButton" access="ReadWrite" />
           <Node name="resetButton" type="T_VisuButton" access="ReadWrite" />
-          <Node name="spindleRunButton" type="T_VisuButton" access="ReadWrite" />
+          <Node name="spindleActualSpeed" type="T_UINT" access="ReadWrite" />
+          <Node name="spindleLoad" type="T_INT" access="ReadWrite" />
+          <Node name="spindleRunCCWButton" type="T_VisuButtonMenu" access="ReadWrite" />
+          <Node name="spindleRunCWButton" type="T_VisuButtonMenu" access="ReadWrite" />
           <Node name="spindleSpeed" type="T_UINT" access="ReadWrite" />
-          <Node name="spindleStopButton" type="T_VisuButton" access="ReadWrite" />
+          <Node name="spindleStopButton" type="T_VisuButtonMenu" access="ReadWrite" />
           <Node name="startButton" type="T_VisuButton" access="ReadWrite" />
           <Node name="stopButton" type="T_VisuButton" access="ReadWrite" />
+          <Node name="subscreenAxisSettingsRequest" type="T_INT" access="ReadWrite" />
           <Node name="subscreenRequest" type="T_INT" access="ReadWrite" />
           <Node name="subscreenRequestSpindleOverrides" type="T_INT" access="ReadWrite" />
           <Node name="xLoad" type="T_INT" access="ReadWrite" />
