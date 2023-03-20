@@ -67,6 +67,9 @@
       <UserDefElement iecname="zSelection" type="T_BOOL" byteoffset="26" vartype="VAR" />
     </TypeUserDef>
     <TypeSimple name="T_MaxString" size="256" swapsize="0" typeclass="String" iecname="MaxString" aliasedtype="T_STRING_255_" aliasediecname="STRING(255)" />
+    <TypeUserDef name="T_OutputDevice" size="1" nativesize="1" typeclass="Userdef" pouclass="STRUCTURE" iecname="OutputDevice">
+      <UserDefElement iecname="output" type="T_BOOL" byteoffset="0" vartype="VAR" />
+    </TypeUserDef>
     <TypeUserDef name="T_Position" size="24" nativesize="24" typeclass="Userdef" pouclass="STRUCTURE" iecname="Position">
       <UserDefElement iecname="relative" type="T_LREAL" byteoffset="0" vartype="VAR" />
       <UserDefElement iecname="machine" type="T_LREAL" byteoffset="8" vartype="VAR" />
@@ -87,6 +90,12 @@
     <TypeArray name="T_ARRAY__0__5__OF_Fixture" size="192" nativesize="192" typeclass="Array" iecname="ARRAY [0..5] OF Fixture" basetype="T_Fixture">
       <ArrayDim minrange="0" maxrange="5" />
     </TypeArray>
+    <TypeUserDef name="T_AirFlow" size="1" nativesize="1" typeclass="Userdef" pouclass="STRUCTURE" iecname="AirFlow" basetype="T_OutputDevice">
+      <UserDefElement iecname="output" type="T_BOOL" byteoffset="0" vartype="VAR" inherited_from="T_OutputDevice" />
+    </TypeUserDef>
+    <TypeUserDef name="T_Coolant" size="1" nativesize="1" typeclass="Userdef" pouclass="STRUCTURE" iecname="Coolant" basetype="T_OutputDevice">
+      <UserDefElement iecname="output" type="T_BOOL" byteoffset="0" vartype="VAR" inherited_from="T_OutputDevice" />
+    </TypeUserDef>
     <TypeUserDef name="T_VisuButtonMenu" size="3" nativesize="3" typeclass="Userdef" pouclass="STRUCTURE" iecname="VisuButtonMenu" basetype="T_VisuButton">
       <UserDefElement iecname="button" type="T_BOOL" byteoffset="0" vartype="VAR" inherited_from="T_VisuButton" />
       <UserDefElement iecname="lamp" type="T_BOOL" byteoffset="1" vartype="VAR" inherited_from="T_VisuButton" />
@@ -103,6 +112,12 @@
   </TypeList>
   <NodeList>
     <Node name="Application">
+      <Node name="CNCMG">
+        <Node name="Variables">
+          <Node name="airFlow" type="T_AirFlow" access="ReadWrite" />
+          <Node name="coolantPump" type="T_Coolant" access="ReadWrite" />
+        </Node>
+      </Node>
       <Node name="PersistentVars">
         <Node name="AGMAxesSettings" type="T_AGMAxesSettings" access="ReadWrite" />
         <Node name="agmGeneralSettings" type="T_AGMGeneralSettings" access="ReadWrite" />
